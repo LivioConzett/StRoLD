@@ -1,7 +1,6 @@
 #midi to sound
 
 import pygame
-import pygame.locals as pgl
 import pygame.midi
 
 
