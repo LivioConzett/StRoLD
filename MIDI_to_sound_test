@@ -1,4 +1,6 @@
 #midi to sound
+#Livio Conzett
+#Requires:  this example was run in Python 2.7 with pygame 1.9.2 installed.
 
 import pygame
 import pygame.midi
