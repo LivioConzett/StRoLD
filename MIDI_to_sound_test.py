@@ -31,5 +31,4 @@ while c:
         else:				#if first byte not 144 then sound off
             mo.note_off(d[1],127)
 		
-del i
 pygame.midi.quit()
