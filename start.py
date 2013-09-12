@@ -4,7 +4,5 @@ import midi_to_sound
 import time
 
 while True:
-	if midi_to_sound.midi() == 0:
-		time.sleep(1)
-	else:
-		break
+	if midi_to_sound.midi() == 1:
+	break
