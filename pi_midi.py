@@ -71,7 +71,7 @@ def write(d,state):                      #write out the note
 		print "Fis3", state
 	elif d == '0x4f':
 		print "G3", state
-	elif d == '0x4g':
+	elif d == '0x50':
 		print "Gis3", state
 	elif d == '0x51':
 		print "A3", state
@@ -86,24 +86,33 @@ def write(d,state):                      #write out the note
 
 
 def midi():
+	f = open('/dev/snd/midiC1D0')	
 	
-	f=open('/dev/snd/midiC1D0')
 	while True:
-		b = f.read(3)
-		c = list(b)
+		try:	
+			b = f.read(3)
+			c = list(b)
+		
+			one = hex(ord(c[0]))
+			two = hex(ord(c[1]))
 	
-		one = hex(ord(c[0]))
-		two = hex(ord(c[1]))
-	
-		if one == '0x90':
-			state = 1
-		else:
-			state = 0
-		if write(two,state):
-			break
+			if one == '0x90':
+				state = 1
+			else:
+				state = 0
+                	if write(two,state) == 2:
+                        	return 2
+		except IOError:
+			print "no file"
+			return 1
 	f.closed
-	
+        return 1
+
+
+
 def main():
-	midi()
+       midi()
+
+
 
 if __name__ == '__main__': main()
