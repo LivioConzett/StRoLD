@@ -101,18 +101,12 @@ def midi():
 			else:
 				state = 0
                 	if write(two,state) == 2:
+                		f.closed
                         	return 2
 		except IOError:
 			print "no file"
 			return 1
-	f.closed
-        return 1
 
 
 
-def main():
-       midi()
 
-
-
-if __name__ == '__main__': main()
