@@ -1,8 +1,15 @@
-#test to start script in python
+#start the programm
 
-import midi_to_sound
-import time
+
+
+import pi_midi
+
+print "running"
 
 while True:
-	if midi_to_sound.midi() == 1:
-		break
+	try:
+		if pi_midi.midi() == 2:
+			break
+	except IOError:
+		pass
+
