@@ -3,6 +3,10 @@
 import libnodave
 print "imported libnodave"
 
+from time import sleep
+
+sleep(60)
+
 dave = libnodave.Libnodave()
 print "initiolized class libnodave()"
 dave.eth_connection("192.168.22.222")
