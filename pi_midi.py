@@ -119,22 +119,22 @@ def write(d,state):                      #write out the note
 	elif d == '0x51':
 		print "A3", state
 		dave.write_marker_byte(37,state)
-	elif d == '0x24':
-		dave.eth_connection("192.168.22.222")
-		dave.write_marker_byte(39,1)
-	elif d == '0x25':
-		dave.write_marker_byte(39,0)
-		dave.disconnect()
-	elif d == '0x26':
-		dave.start_PLC()
-	elif d == '0x27':
-		dave.stop_PLC()
-	elif d == '0x28':
-		dave.write_marker_byte(40,1)
-		print "drops off"
-	elif d == '0x29':
-		dave.write_marker_byte(40,0)
-		print "drops on"
+#	elif d == '0x24':
+#		dave.eth_connection("192.168.22.222")
+#		dave.write_marker_byte(39,1)
+#	elif d == '0x25':
+#		dave.write_marker_byte(39,0)
+#		dave.disconnect()
+#	elif d == '0x26':
+#		dave.start_PLC()
+#	elif d == '0x27':
+#		dave.stop_PLC()
+#	elif d == '0x28':
+#		dave.write_marker_byte(40,1)
+#		print "drops off"
+#	elif d == '0x29':
+#		dave.write_marker_byte(40,0)
+#		print "drops on"
 	elif d == '0x54':
 		dave.write_marker_byte(39,0)
 		dave.disconnect()
